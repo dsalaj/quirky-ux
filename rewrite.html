@@ -206,39 +206,50 @@
 </div>
 
 <script>
-    var strDiff = function ( s1, s2, splitChar ){
-        if ( typeof splitChar == "undefined" ){
+    var strDiff = function (original, changed, splitChar) {
+        // TODO: maybe replace with https://github.com/jhchen/fast-diff/blob/master/diff.js
+        // TODO: to be smarter on matching the common blocks
+        if (typeof splitChar == "undefined") {
             splitChar = "";
         }
         var string1 = new Array();
         var string2 = new Array();
 
-        string1 = s1.split( splitChar );
-        string2 = s2.split( splitChar );
+        string1 = original.split(splitChar);
+        string2 = changed.split(splitChar);
         var diff = new Array();
         var idxs = new Array();
+        var add = true;
 
-        if(s1.length>s2.length){
-            var long = string1;
-            var tmp = string1;
-            string1 = string2;
-            string2 = tmp;
+        if (original.length > changed.length) {
+            var length = string1.length;
+            for (x = 0; x < length; x++) {
+                if (string1[x] != string2[x]) {
+                    diff.push(string1[x]);
+                    idxs.push(x);
+                    break;
+                }
+            }
+            add = true;
         }
         else {
-            var long = string2;
-        }
-        for(x=0; x<long.length; x++){
-            if(string1[x]!=string2[x]){
-                diff.push(string2[x]);
-                idxs.push(x);
+            var length = string2.length;
+            for (x = 0; x < length; x++) {
+                if (string1[x] != string2[x]) {
+                    diff.push(string2[x]);
+                    idxs.push(x);
+                    break;
+                }
             }
+            add = false;
         }
 
         return {
             diff: diff,
-            idxs: idxs
+            idxs: idxs,
+            add: add
         };
-    }
+    };
 
     function get_txt(x) {
         return x.textContent
@@ -248,32 +259,37 @@
             this.elem = elem;
             this.text = elem.textContent;
         }
-    }
+    };
+
+    var stuff = [];
     window.addEventListener('load', function() {
-        console.log('All assets are loaded');
         var targets = document.getElementsByClassName("rewrite");
-        var stuff = [];
         Array.prototype.forEach.call(targets, function(target) {
             stuff.push(new Student(target));
             target.setAttribute("contenteditable", "true");
         });
+    });
+    function ChangeText() {
         setInterval(function(){
             Array.prototype.forEach.call(stuff, function(s) {
                 var a = s.elem.textContent;
                 var diff = strDiff(s.text, a);
                 console.log(diff.diff);
                 var step = 1;
-                //var step = (diff.diff.length < 5) ? 1 : 2; //FIXME: diff is not precise with per character mode..
-                // step = (diff.diff.length > 10) ? 3 : step;
                 if(typeof diff.diff[0] !== "undefined"){
-                    console.log(diff.diff.slice(0, step));
-                    var output = [a.slice(0, diff.idxs[0]), diff.diff.slice(0, step), a.slice(diff.idxs[0])].join('');
-                    s.elem.textContent = output;
+                    if (diff.add){
+                        console.log(diff.diff.slice(0, step));
+                        var output = [a.slice(0, diff.idxs[0]), diff.diff.slice(0, step), a.slice(diff.idxs[0])].join('');
+                        s.elem.textContent = output;
+                    } else {
+                        var output = [a.slice(0, diff.idxs[0]), a.slice(diff.idxs[0] + 1)].join('');
+                        s.elem.textContent = output;
+                    }
                 }
                 diff = null;
             });
-        }, 2000);
-    });
+        }, 200);
+    }
 </script>
 
 </body></html>
