@@ -203,9 +203,17 @@
     domain in examples without prior coordination or asking for permission.</p>
     <p class="rewrite">Lipsum this domain is established to be for permission.</p>
     <input type="button" onclick="ChangeText()" value="Change text" />
+
+    <audio id="audio" src="typewriter.wav" autostart="false" ></audio>
+    <a onclick="playSound();"> Play</a>
 </div>
 
 <script>
+    var sound = document.getElementById("audio");
+    function playSound() {
+        var sound = document.getElementById("audio");
+        sound.play();
+    }
     var strDiff = function (original, changed, splitChar) {
         // TODO: maybe replace with https://github.com/jhchen/fast-diff/blob/master/diff.js
         // TODO: to be smarter on matching the common blocks
@@ -274,17 +282,19 @@
             Array.prototype.forEach.call(stuff, function(s) {
                 var a = s.elem.textContent;
                 var diff = strDiff(s.text, a);
-                console.log(diff.diff);
                 var step = 1;
                 if(typeof diff.diff[0] !== "undefined"){
+                    sound.play();
                     if (diff.add){
-                        console.log(diff.diff.slice(0, step));
                         var output = [a.slice(0, diff.idxs[0]), diff.diff.slice(0, step), a.slice(diff.idxs[0])].join('');
                         s.elem.textContent = output;
                     } else {
                         var output = [a.slice(0, diff.idxs[0]), a.slice(diff.idxs[0] + 1)].join('');
                         s.elem.textContent = output;
                     }
+                } else {
+                    sound.pause();
+                    sound.currentTime = 0;
                 }
                 diff = null;
             });
