@@ -26,7 +26,7 @@
         border-color: rgba(0, 0, 0, .1);
     }
     .b--white-10 {
-        border-color: rgba(0, 0, 0, .0);
+        border-color: rgba(255, 255, 255, 1.0);
     }
 
     .br3 {
@@ -158,6 +158,50 @@
       padding: 2px;
       font:12px Monaco,Consolas,"Andale  Mono","DejaVu Sans Mono",monospace
     }
+    .fashion {
+      background: #222;
+      color: #ddd;
+    }
+    .flash-wrap{
+      position: relative;
+    }
+    .flash{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-color:#fff;
+      pointer-events: none; /* pass through click events */
+    }
+
+    a {
+      color: #444;
+      padding: 1px 2px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .link {
+      text-decoration: none;
+      transition: color .15s ease-in;
+    }
+
+    .link:link, .link:visited {
+      transition: color .15s ease-in;
+    }
+
+    .link:hover {
+      transition: color .15s ease-in;
+    }
+
+    .link:active {
+      transition: color .15s ease-in;
+    }
+
+    .link:focus {
+      transition: color .15s ease-in;
+      outline: 1px dotted currentColor;
+    }
   </style>
   <body>
     <h1 class="tc-l white f-headline q-font mv3">Quirky UI</h1>
@@ -201,12 +245,51 @@
         <h2 class="f2 q-font cdot mt0">paparazzi 📷</h2>
         <hr class="mw3 bb bw1 b--black-10">
       </div>
+
       <p class="lh-copy measure center f6 black-70">
-        This component simulates the camera flash effects or lightning if you will.
-        You can also modify the timing parameters to achieve a flickering light effect
-        for spooky/horror setting.
+        Paparazzi component will make the elements marked with <c>.flash-wrap</c>
+        have an occasional camera flash (or lightning) effect.
+        Use it in on a gossip site maybe like example bellow?
+        Or even better adapt the parameters to simulate the light flicker effect
+        for horror effect! 🦇
+      </p>
+      <div class="mw6 center bg-white br3 pa2 ba b--black-10 fashion flash-wrap">
+        <h3 class="mt0">Fashion scandal drama!</h3>
+        <p class="mv0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a euismod sapien.
+          Praesent feugiat tincidunt auctor.
+        </p>
+        <p class="mv0 f1">
+           👠 🤩 👯‍️ 💋 😱
+        </p>
+        <div class="flash"></div>
+      </div>
+    </article>
+
+
+    <article class="mw6 center bg-white br3 pa3 mv3 ba b--black-10">
+      <div class="tc">
+        <h2 class="f2 q-font cdot mt0">boogie 🎉</h2>
+        <hr class="mw3 bb bw1 b--black-10">
+      </div>
+      <p class="lh-copy measure center f6 black-70">
+        Boogie component will make the elements marked with <c>.boogie</c>
+        wiggle and boogie all night long.
+        Tweak the parameters to get many different behaviors.
+      </p>
+      <div class="mw6 center bg-white br3 pa2 ba b--black-10">
+        <h3 class="mt0">TODO</h3>
+      </div>
+    </article>
+
+
+    <article class="mw6 center pa3 mv3 b--black-10">
+      <p class="lh-copy measure center f6 black-70 tc">
+        Made by <a href="https://github.com/dsalaj" class="link">dsalaj</a>
       </p>
     </article>
     <script type="text/javascript" src="components/typewriter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="components/flash.js"></script>
   </body>
 </html>
