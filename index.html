@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title> </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">-->
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Gaegu:700');
+    .q-font {
+        font-family: 'Gaegu', cursive;
+
+    }
+    body {
+        background: rgba(0, 0, 0, .12);
+    }
+    .ba {
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .bb {
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+    }
+
+    .b--black-10 {
+        border-color: rgba(0, 0, 0, .1);
+    }
+
+    .br3 {
+        border-radius: .5rem;
+    }
+
+    .br-100 {
+        border-radius: 100%;
+    }
+
+    .bw1 {
+        border-width: .125rem;
+    }
+
+    .dib {
+        display: inline-block;
+    }
+
+    .h3 {
+        height: 4rem;
+    }
+
+    .lh-copy {
+        line-height: 1.5;
+    }
+
+    .mw3 {
+        max-width: 4rem;
+    }
+
+    .mw6 {
+        max-width: 32rem;
+    }
+
+    .w3 {
+        width: 4rem;
+    }
+
+    .black-70 {
+        color: rgba(0, 0, 0, .7);
+    }
+
+    .white {
+        color: #fff;
+    }
+
+    .bg-white {
+        background-color: #fff;
+    }
+
+    .pa3 {
+        padding: 1rem;
+    }
+
+    .mv3 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .mt0 {
+        margin-top: 0rem;
+        margin-bottom: 1rem;
+    }
+
+    .tc {
+        text-align: center;
+    }
+
+    .f1 { font-size: 3rem; }
+    .f2 { font-size: 2.25rem; }
+    .f3 { font-size: 1.5rem; }
+    .f4 { font-size: 1.25rem; }
+    .f6 { font-size: .875rem; }
+
+    .measure {
+        max-width: 30em;
+    }
+
+    .center {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .tc-l {
+        text-align: center;
+    }
+
+    .cdot:before {
+        content: "· ";
+    }
+
+    @media screen and (min-width: 30em) {
+        .pa4-ns {
+            padding: 2rem;
+        }
+    }
+    @media screen and (max-width: 30em) {
+        .pa4-ns {
+            padding: 0rem;
+        }
+    }
+    .f-headline {
+        font-size: 2rem;
+    }
+    @media screen and (min-width: 30em) and (max-width: 60em) {
+        .f-headline {
+            font-size: 5rem;
+        }
+    }
+    @media screen and (min-width: 60em) {
+        .f-headline {
+            font-size: 8rem;
+        }
+    }
+  </style>
+  <body>
+    <h1 class="tc-l white f-headline q-font mv3">Quirky UI</h1>
+    <article class="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+      <div class="tc">
+        <h2 class="f2 q-font cdot mt0">typewriter</h2>
+        <hr class="mw3 bb bw1 b--black-10">
+      </div>
+      <p class="lh-copy measure center f6 black-70">
+        Typewriter component will make the elements marked with `.rewrite` editable.
+        Whenever a user changes this content, the typewriter will correct it back
+        while making the typewriter clicky sounds. A paragraph bellow is marked with
+        `.rewrite` class, try to delete or change one of it's words and watch the
+        typewriter in action.
+      </p>
+      <audio id="audio" src="typewriter.wav" autostart="false" preload="auto" crossOrigin="anonymous" ></audio>
+      <p class="rewrite">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a euismod sapien.
+        Praesent feugiat tincidunt auctor. Sed sagittis ligula quam, id congue tellus efficitur nec.
+        Nam ornare enim non magna placerat, quis fermentum...
+      </p>
+    </article>
+    <article class="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+      <div class="tc">
+        <h2 class="f2 q-font cdot mt0">paparazzi</h2>
+        <hr class="mw3 bb bw1 b--black-10">
+      </div>
+      <p class="lh-copy measure center f6 black-70">
+        This component simulates the camera flash effects or lightning if you will.
+        You can also modify the timing parameters to achieve a flickering light effect
+        for spooky/horror setting.
+      </p>
+    </article>
+    <script type="text/javascript" src="components/typewriter.js"></script>
+  </body>
+</html>
