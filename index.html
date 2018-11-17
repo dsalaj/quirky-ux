@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">-->
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Gaegu:700');
+    @import url('https://fonts.googleapis.com/css?family=Gaegu:700|Satisfy');
     .q-font {
         font-family: 'Gaegu', cursive;
 
@@ -24,6 +24,9 @@
 
     .b--black-10 {
         border-color: rgba(0, 0, 0, .1);
+    }
+    .b--white-10 {
+        border-color: rgba(0, 0, 0, .0);
     }
 
     .br3 {
@@ -70,13 +73,15 @@
         color: #fff;
     }
 
-    .bg-white {
-        background-color: #fff;
+    .bg-white { background-color: #fff; }
+    .bg-papyrus {
+      background-color: #f1e6de;
+      color: #302505;
+      font-family: 'Satisfy', cursive;
     }
 
-    .pa3 {
-        padding: 1rem;
-    }
+    .pa2 { padding: 0.5rem; }
+    .pa3 { padding: 1rem; }
 
     .mv3 {
         margin-top: 1rem;
@@ -85,6 +90,10 @@
     .mt0 {
         margin-top: 0rem;
         margin-bottom: 1rem;
+    }
+    .mv0 {
+        margin-top: 0rem;
+        margin-bottom: 0rem;
     }
 
     .tc {
@@ -137,31 +146,59 @@
             font-size: 8rem;
         }
     }
+    .grit {
+      -webkit-mask-image: url("grit.png");
+      mask-image: url("grit.png");
+    }
+    c {
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border: 1px solid #BCBEC0;
+      padding: 2px;
+      font:12px Monaco,Consolas,"Andale  Mono","DejaVu Sans Mono",monospace
+    }
   </style>
   <body>
     <h1 class="tc-l white f-headline q-font mv3">Quirky UI</h1>
-    <article class="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+    <article class="mw6 center bg-white br3 pa3 mv3 ba b--black-10">
       <div class="tc">
-        <h2 class="f2 q-font cdot mt0">typewriter</h2>
+        <h2 class="f2 q-font cdot mt0">typewriter ⌨️</h2>
         <hr class="mw3 bb bw1 b--black-10">
       </div>
+
       <p class="lh-copy measure center f6 black-70">
-        Typewriter component will make the elements marked with `.rewrite` editable.
+        Typewriter component will make the elements marked with <c>.rewrite</c> editable.
         Whenever a user changes this content, the typewriter will correct it back
         while making the typewriter clicky sounds. A paragraph bellow is marked with
-        `.rewrite` class, try to delete or change one of it's words and watch the
+        <c>.rewrite</c> class, try to delete or change one of it's words and watch the
         typewriter in action.
       </p>
-      <audio id="audio" src="typewriter.wav" autostart="false" preload="auto" crossOrigin="anonymous" ></audio>
-      <p class="rewrite">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a euismod sapien.
-        Praesent feugiat tincidunt auctor. Sed sagittis ligula quam, id congue tellus efficitur nec.
-        Nam ornare enim non magna placerat, quis fermentum...
+      <div class="mw6 center bg-white br3 pa2 ba b--black-10">
+        <audio id="audio" src="typewriter.wav" autostart="false" preload="auto" crossOrigin="anonymous" ></audio>
+        <p class="rewrite mv0" rewrite-audio="audio">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a euismod sapien.
+          Praesent feugiat tincidunt auctor. Sed sagittis ligula quam, id congue tellus efficitur nec.
+          Nam ornare enim non magna placerat, quis fermentum...
+        </p>
+      </div>
+
+      <p class="lh-copy measure center f6 black-70">
+        Easily customize this component to your needs. For example by simply changing the
+        font and audio you can transform the typewriter to scribe! ✒️
       </p>
+      <div class="mw6 center bg-white br3 pa2 ba b--white-10 bg-papyrus grit">
+        <audio id="audio2" src="scribe.wav" autostart="false" preload="auto" crossOrigin="anonymous" ></audio>
+        <p class="rewrite mv0 f2" rewrite-audio="audio2">
+          Lorem ipsum dolor sit amet...
+        </p>
+      </div>
     </article>
-    <article class="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+
+
+    <article class="mw6 center bg-white br3 pa3 mv3 ba b--black-10">
       <div class="tc">
-        <h2 class="f2 q-font cdot mt0">paparazzi</h2>
+        <h2 class="f2 q-font cdot mt0">paparazzi 📷</h2>
         <hr class="mw3 bb bw1 b--black-10">
       </div>
       <p class="lh-copy measure center f6 black-70">

@@ -1,4 +1,3 @@
-var sound = document.getElementById("audio");
 var strDiff = function (original, changed, splitChar) {
     // TODO: maybe replace with https://github.com/jhchen/fast-diff/blob/master/diff.js
     // TODO: to be smarter on matching the common blocks
@@ -51,16 +50,19 @@ var Student = class {
     constructor(elem) {
         this.elem = elem;
         this.text = elem.textContent;
+        this.sound = document.getElementById(elem.getAttribute("rewrite-audio"));
     }
 };
 
 var stuff = [];
+//var sound = document.getElementById("audio");
 window.addEventListener('load', function() {
     var targets = document.getElementsByClassName("rewrite");
     Array.prototype.forEach.call(targets, function(target) {
         stuff.push(new Student(target));
-        target.setAttribute("contenteditable", "true");
-        target.setAttribute("style", "outline: 0px solid transparent;")
+        target.setAttribute("contenteditable", "true"); // make text editable
+        target.setAttribute("style", "outline: 0px solid transparent;"); // hide the outline of editable element
+        target.setAttribute("spellcheck", "false"); // hide the spell checking underline of editable text
     });
 });
 function ChangeText() {
@@ -70,7 +72,7 @@ function ChangeText() {
             var diff = strDiff(s.text, a);
             var step = 1;
             if(typeof diff.diff[0] !== "undefined"){
-                sound.play();
+                s.sound.play();
                 if (diff.add){
                     var output = [a.slice(0, diff.idxs[0]), diff.diff.slice(0, step), a.slice(diff.idxs[0])].join('');
                     s.elem.textContent = output;
@@ -79,8 +81,8 @@ function ChangeText() {
                     s.elem.textContent = output;
                 }
             } else {
-                sound.pause();
-                sound.currentTime = 0;
+                s.sound.pause();
+                s.sound.currentTime = 0;
             }
             diff = null;
         });
