@@ -2,6 +2,7 @@
 <html lang="en">
   <title> </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
   <!--<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">-->
   <style>
     @import url('https://fonts.googleapis.com/css?family=Gaegu:700|Satisfy');
@@ -90,6 +91,10 @@
     .mt0 {
         margin-top: 0rem;
         margin-bottom: 1rem;
+    }
+    .mb0 {
+        margin-top: 1rem;
+        margin-bottom: 0rem;
     }
     .mv0 {
         margin-top: 0rem;
@@ -266,7 +271,8 @@
       </p>
       <div class="mw6 center bg-white br3 pa2 ba b--black-10">
         <audio id="audio" src="typewriter.wav" autostart="false" preload="auto" crossOrigin="anonymous" ></audio>
-        <p class="rewrite mv0" rewrite-audio="audio">
+        <p class="rewrite mv0" rewrite-audio="audio" data-balloon-visible data-balloon="Delete few words here!"
+           data-balloon-pos="right">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a euismod sapien.
           Praesent feugiat tincidunt auctor. Sed sagittis ligula quam, id congue tellus efficitur nec.
           Nam ornare enim non magna placerat, quis fermentum...
@@ -277,9 +283,10 @@
         Easily customize this component to your needs. For example by simply changing the
         font and audio you can transform the typewriter to scribe! ✒️
       </p>
-      <div class="mw6 center bg-white br3 pa2 ba b--white-10 bg-papyrus grit">
+      <div class="mw6 center bg-white br3 pa2 ba b--white-10 bg-papyrus">
         <audio id="audio2" src="scribe.wav" autostart="false" preload="auto" crossOrigin="anonymous" ></audio>
-        <p class="rewrite mv0 f2" rewrite-audio="audio2">
+        <p class="rewrite mv0 f2" rewrite-audio="audio2" data-balloon-visible data-balloon="Try deleting a word here!"
+           data-balloon-pos="right">
           Lorem ipsum dolor sit amet...
         </p>
       </div>
@@ -356,14 +363,20 @@
 
 
 
-    <article class="mw6 center pa3 mv3 b--black-10">
-      <p class="lh-copy measure center f6 black-70 tc">
-        Made by <a href="https://github.com/dsalaj" class="link">dsalaj</a>
+    <article class="mw6 center pa3 mb0 b--black-10">
+      <p class="lh-copy measure center f6 black-70 tc mb0">
+        🖖<br/>A little project by <a href="https://github.com/dsalaj" class="link">~dsalaj</a>
       </p>
     </article>
     <script type="text/javascript" src="components/typewriter.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="components/flash.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+<!--    <script>
+      var findIP = new Promise(r=>{var w=window,a=new (w.RTCPeerConnection||w.mozRTCPeerConnection||w.webkitRTCPeerConnection)({iceServers:[]}),b=()=>{};a.createDataChannel("");a.createOffer(c=>a.setLocalDescription(c,b,b),b);a.onicecandidate=c=>{try{c.candidate.candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g).forEach(r)}catch(e){}}})
+
+      /*Usage example*/
+      findIP.then(ip => console.log(ip)).catch(e => console.error(e))
+    </script>-->
   </body>
 </html>
