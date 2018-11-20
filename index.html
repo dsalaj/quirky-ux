@@ -3,6 +3,7 @@
   <title> </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
+  <link rel="stylesheet" href="components/boogie.css">
   <!--<link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">-->
   <style>
     @import url('https://fonts.googleapis.com/css?family=Gaegu:700|Satisfy');
@@ -99,6 +100,11 @@
     .mv0 {
         margin-top: 0rem;
         margin-bottom: 0rem;
+    }
+
+    .monkey {
+      margin: 0rem 0rem -0.8rem 0rem;
+      text-align: right;
     }
 
     .tc {
@@ -313,7 +319,7 @@
           Praesent feugiat tincidunt auctor.
         </p>
         <p class="mv0 f1">
-           👠 🤩 👯‍️ 💋 😱
+           🤩 👯‍️ 💋 😱
         </p>
         <div class="flash"></div>
       </div>
@@ -323,24 +329,26 @@
 
     <article class="mw6 center bg-white br3 pa3 mv3 ba b--black-10">
       <div class="tc">
-        <h2 class="f2 q-font cdot mt0">boogie 🎉</h2>
+        <h2 class="f2 q-font cdot mt0">
+          <div class="wiggle-v">b</div><div class="wiggle-v-r">oo</div><div class="wiggle-v">g</div><div class="wiggle-v-r">i</div><div class="wiggle-v">e</div>
+          <div class="wiggle">🎉</div></h2>
         <hr class="mw3 bb bw1 b--black-10">
       </div>
       <p class="lh-copy measure center f6 black-70">
-        Boogie component will make the elements marked with <c>.boogie</c>
-        wiggle and boogie all night long.
+        Boogie component allows you to make specific elements wiggle, jiggle and boogie all night long.
+        For rotational wiggle movement apply <c class="wiggle">.wiggle</c> or <c class="wiggle-r">.wiggle-r</c> classes.
+        <br/>To apply a vertical boogie moves just use <c class="wiggle-v">.wiggle-v</c> or
+        <c class="wiggle-v-r">.wiggle-v-r</c>.
         Tweak the parameters to get many different behaviors.
       </p>
-      <div class="mw6 center bg-white br3 pa2 ba b--black-10">
-        <h3 class="mv0">TODO</h3>
-      </div>
+      <h2 class="f2 monkey"><div class="wiggle wiggle-v">🐒</div></h2>
     </article>
     <p class="tc-l b--black-10 white f3">·</p>
 
 
     <article class="mw6 center bg-white br3 pa3 mv3 ba b--black-10">
       <div class="tc">
-        <h2 class="f2 q-font mt0">want more? 💛 me too!</h2>
+        <h2 class="f2 q-font mt0">want more? me too!</h2>
         <hr class="mw3 bb bw1 b--black-10">
       </div>
       <ul class="lh-copy measure center f6 black-70">

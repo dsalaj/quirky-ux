@@ -1,0 +1,133 @@
+@-webkit-keyframes wiggle
+{
+    0% {-webkit-transform: rotateZ(2deg);}
+    50% {-webkit-transform: rotateZ(-2deg);}
+    100% {-webkit-transform: rotateZ(2deg);}
+}
+@-moz-keyframes wiggle
+{
+    0% {-moz-transform: rotateZ(2deg);}
+    50% {-moz-transform: rotateZ(-2deg);}
+    100% {-moz-transform: rotateZ(2deg);}
+}
+@-o-keyframes wiggle
+{
+    0% {-o-transform: rotateZ(2deg);}
+    50% {-o-transform: rotateZ(-2deg);}
+    100% {-o-transform: rotateZ(2deg);}
+}
+@keyframes wiggle
+{
+    0% {transform: rotateZ(2deg);}
+    50% {transform: rotateZ(-2deg);}
+    100% {transform: rotateZ(2deg);}
+}
+
+.wiggle {
+    display: inline-block;
+    -webkit-animation: wiggle 0.2s ease infinite;
+    -moz-animation: wiggle 0.2s ease infinite;
+    -o-animation: wiggle 0.2s ease infinite;
+    animation: wiggle 0.2s ease infinite;
+}
+
+@-webkit-keyframes wiggle-r
+{
+    0% {-webkit-transform: rotateZ(-2deg);}
+    50% {-webkit-transform: rotateZ(2deg);}
+    100% {-webkit-transform: rotateZ(-2deg);}
+}
+@-moz-keyframes wiggle-r
+{
+    0% {-moz-transform: rotateZ(-2deg);}
+    50% {-moz-transform: rotateZ(2deg);}
+    100% {-moz-transform: rotateZ(-2deg);}
+}
+@-o-keyframes wiggle-r
+{
+    0% {-o-transform: rotateZ(-2deg);}
+    50% {-o-transform: rotateZ(2deg);}
+    100% {-o-transform: rotateZ(-2deg);}
+}
+@keyframes wiggle-r
+{
+    0% {transform: rotateZ(-2deg);}
+    50% {transform: rotateZ(2deg);}
+    100% {transform: rotateZ(-2deg);}
+}
+
+.wiggle-r {
+    display: inline-block;
+    -webkit-animation: wiggle-r 0.2s ease infinite;
+    -moz-animation: wiggle-r 0.2s ease infinite;
+    -o-animation: wiggle-r 0.2s ease infinite;
+    animation: wiggle-r 0.2s ease infinite;
+}
+
+
+@-webkit-keyframes wiggle-v
+{
+    0% {-webkit-transform: translateY(-0.2rem);}
+    50% {-webkit-transform: translateY(0.2rem);}
+    100% {-webkit-transform: translateY(-0.2rem);}
+}
+@-moz-keyframes wiggle-v
+{
+    0% {-moz-transform: translateY(-0.2rem);}
+    50% {-moz-transform: translateY(0.2rem);}
+    100% {-moz-transform: translateY(-0.2rem);}
+}
+@-o-keyframes wiggle-v
+{
+    0% {-o-transform: translateY(-0.2rem);}
+    50% {-o-transform: translateY(0.2rem);}
+    100% {-o-transform: translateY(-0.2rem);}
+}
+@keyframes wiggle-v
+{
+    0% {transform: translateY(-0.2rem);}
+    50% {transform: translateY(0.2rem);}
+    100% {transform: translateY(-0.2rem);}
+}
+
+.wiggle-v {
+    display: inline-block;
+    -webkit-animation: wiggle-v 0.5s ease infinite;
+    -moz-animation: wiggle-v 0.5s ease infinite;
+    -o-animation: wiggle-v 0.5s ease infinite;
+    animation: wiggle-v 0.5s ease infinite;
+}
+
+
+@-webkit-keyframes wiggle-v-r
+{
+    0% {-webkit-transform: translateY(0.2rem);}
+    50% {-webkit-transform: translateY(-0.2rem);}
+    100% {-webkit-transform: translateY(0.2rem);}
+}
+@-moz-keyframes wiggle-v-r
+{
+    0% {-moz-transform: translateY(0.2rem);}
+    50% {-moz-transform: translateY(-0.2rem);}
+    100% {-moz-transform: translateY(0.2rem);}
+}
+@-o-keyframes wiggle-v-r
+{
+    0% {-o-transform: translateY(0.2rem);}
+    50% {-o-transform: translateY(-0.2rem);}
+    100% {-o-transform: translateY(0.2rem);}
+}
+@keyframes wiggle-v-r
+{
+    0% {transform: translateY(0.2rem);}
+    50% {transform: translateY(-0.2rem);}
+    100% {transform: translateY(0.2rem);}
+}
+
+.wiggle-v-r {
+    display: inline-block;
+    -webkit-animation: wiggle-v-r 0.5s ease infinite;
+    -moz-animation: wiggle-v-r 0.5s ease infinite;
+    -o-animation: wiggle-v-r 0.5s ease infinite;
+    animation: wiggle-v-r 0.5s ease infinite;
+}
