@@ -180,7 +180,7 @@
     .flash-wrap{
       position: relative;
     }
-    .flash{
+    .flash, .flash-horror{
       position:absolute;
       top:0;
       left:0;
@@ -262,6 +262,7 @@
         </p>
       </div>
     </article>
+    <p class="tc-l b--black-10 white f3">·</p>
 
 
     <article class="mw6 center bg-white br3 pa3 mv3 ba b--black-10">
@@ -321,8 +322,8 @@
         <div class="flash"></div>
       </div>
       <p class="lh-copy measure center f6 black-70">
-        Customize the parameters to simulate the light flicker effect
-        for horror ambient 🦇!
+        Customize the parameters to simulate the light flicker effect, common in
+        <span class="fashion flash-wrap">🦇 horror ambient 🦇<span class="flash-horror"></span></span>!
         Don't worry, the click events are passed right through the flash overlay so
         you can use even super slow decay times and your website will still function properly.
       </p>
@@ -412,10 +413,9 @@
       </p>
     </article>
     <script type="text/javascript" src="components/typewriter.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
-    <script src="jquery.js"></script>
-    <script src="components/flash.js"></script>
- <!--   <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script type="text/javascript" src="components/flash.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--
     <script>
       var findIP = new Promise(r=>{var w=window,a=new (w.RTCPeerConnection||w.mozRTCPeerConnection||w.webkitRTCPeerConnection)({iceServers:[]}),b=()=>{};a.createDataChannel("");a.createOffer(c=>a.setLocalDescription(c,b,b),b);a.onicecandidate=c=>{try{c.candidate.candidate.match(/([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g).forEach(r)}catch(e){}}})
 
