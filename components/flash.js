@@ -5,15 +5,15 @@ function flash(){
    .css({'opacity': 1});
 }
 
-$(document).ready(function() {    
-  $('.flash').hide();  
+$(document).ready(function() {
+  $('.flash').hide();
   (function loop() {
     var mindelay = 200;
     var maxdelay = 2000;
     var rand = Math.round(Math.random() * (maxdelay - mindelay)) + mindelay;
     setTimeout(function() {
             flash();
-            loop();  
+            loop();
     }, rand);
 }());
 });
