@@ -3,7 +3,6 @@
 **quirky-ux** injects your boring website with some character and glitter.
 Browse through the example gallery to get inspired and take what you like.
 quirky-ux is written in pure JavaScript and has no dependencies.
-Injects your boring website with some character and glitter.
 
 ## why?
 
